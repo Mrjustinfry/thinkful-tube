@@ -29,6 +29,10 @@ h2 {
   margin-top: 20px;
 }
 
+h4 {
+  margin-left: 20px;
+}
+
 .searchBox {
   background-color: red;
   width: 100%;
@@ -49,8 +53,9 @@ h2 {
 }
 
 .submit {
-  background-color: red;
-  color: white;
+  background-color: white;
+  color: black;
+  font-weight: bold;
   border: 2px solid darkred;
   border-radius: 0 10px 10px 0;
   margin-left: 0;

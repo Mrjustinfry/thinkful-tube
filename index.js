@@ -1,3 +1,5 @@
+'use strict';
+
 const endPoint = "https://www.googleapis.com/youtube/v3/search";
 
 
@@ -22,11 +24,15 @@ function renderResults(result) {
   </div>`
 }
 
+function renderMsg() {
+  return `<h4>Here are the top five videos.</h4>`; 
+}
 
 function displayData(data) {
   const results = data.items.map((item, index) => renderResults(item));
-  $('.results').html(results);
+  $('.results').prop('hidden',false).html(results);
 }
+
 
 function formSubmit() {
   $('.searchForm').submit(event => {
@@ -34,8 +40,10 @@ function formSubmit() {
     const queryTarget = $(event.currentTarget).find('.jsQuery');
     const query = queryTarget.val();
     queryTarget.val("");
+    $('.resultMsg').prop('hidden',false).html(renderMsg);
     gatherData(query, displayData);
   });
 }
+
  
 $(formSubmit);
